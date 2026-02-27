@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Jiate Li",
+    "profile_url": "https://JetRichardLee.github.io/",
+    "image": "images/others/JiateLi.webp",
+    "alt": "Jiate Li",
+    "year_info": "1st year, Joined Fortis in Aug 2025",
+    "research": "GNN, AI Robustness",
+    "email": "jiateli@usc.edu"
+  },
+  {
+    "name": "Shawn Li (黎力)",
+    "profile_url": "https://lili0415.github.io/",
+    "image": "images/others/lili.jpg",
+    "alt": "Li Li",
+    "year_info": "2nd year, Joined Fortis in Aug 2024",
+    "research": "Multimodal Learning, Trustworthy ML",
+    "awards": [
+      "Amazon ML Fellowship",
+      "Capital One Fellowship"
+    ],
+    "email": "li.li02@usc.edu"
+  },
+  {
+    "name": "Yuehan Qin",
+    "profile_url": "https://yqin43.github.io/",
+    "image": "images/others/qin.webp",
+    "alt": "Yuehan Qin",
+    "year_info": "4th year, Joined Fortis in Jan 2024",
+    "research": "OOD Detection, Time Series",
+    "email": "yuehanqi@usc.edu"
+  },
+  {
+    "name": "Haoyan Xu",
+    "profile_url": "https://scholar.google.com/citations?user=BDjUvE8AAAAJ&hl=en",
+    "image": "images/others/xhy.webp",
+    "alt": "Haoyan Xu",
+    "year_info": "4th year, Joined Fortis in Jan 2024",
+    "research": "GNN, Anomaly Detection",
+    "awards": [
+      "Capital One Fellowship"
+    ],
+    "email": "haoyanxu@usc.edu",
+    "co_advised_by": {
+      "name": "Mengyuan Li",
+      "url": "https://mengyuan-l.github.io/index.html"
+    }
+  },
+  {
+    "name": "Tiankai Yang",
+    "profile_url": "https://raymondy.github.io/",
+    "image": "images/others/tiankai.webp",
+    "alt": "Tiankai Yang",
+    "year_info": "2nd year, Joined Fortis in Aug 2024",
+    "research": "Anomaly Detection, LLM",
+    "email": "tiankaiy@usc.edu"
+  }
+]

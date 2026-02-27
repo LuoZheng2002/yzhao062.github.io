@@ -232,341 +232,151 @@
                 <hr>
                 <p><strong>Connect with them</strong>: many of my Ph.D. students are looking for internships for Summer 2026 -- please reach out to them (or me for an intro). </p>
                 <div class="team-section">
-                <div class="row">
-
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/JiateLi.webp" alt="Jiate Li" class="team-img">
-                        <h3><a href="https://JetRichardLee.github.io/">Jiate Li</a></h3>
-                        <p>1st year, Joined Fortis in Aug 2025</p>
-                        <p>GNN, AI Robustness</p>
-                        <p class="member-status"><strong>Ph.D. Student</strong> (jiateli@usc.edu)</p>
-                    </div>
-
-                   <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/lili.jpg" alt="Li Li" class="team-img">
-                        <h3><a href="https://lili0415.github.io/">Shawn Li (黎力)</a></h3>
-                        <p>2nd year, Joined Fortis in Aug 2024</p>
-                        <p>Multimodal Learning, Trustworthy ML</p>
-                        <p><i class="fas fa-award" style="font-size:18px; color:#990000"></i> Amazon ML Fellowship, Capital One Fellowship</p>
-                        <p class="member-status"><strong>Ph.D. Student</strong> (li.li02@usc.edu)</p>
-                    </div>
-
-
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/qin.webp" alt="Yuehan Qin" class="team-img">
-                        <h3><a href="https://yqin43.github.io/">Yuehan Qin</a></h3>
-                        <p>4th year, Joined Fortis in Jan 2024</p>
-                        <p>OOD Detection, Time Series</p>
-                        <p class="member-status"><strong>Ph.D. Student</strong> (yuehanqi@usc.edu)</p>
-                    </div>
-
-                    <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/xhy.webp" alt="Haoyan Xu" class="team-img">
-                        <h3><a href="https://scholar.google.com/citations?user=BDjUvE8AAAAJ&hl=en">Haoyan Xu</a></h3>
-                        <p>4th year, Joined Fortis in Jan 2024</p>
-                        <p>GNN, Anomaly Detection</p>
-                        <p><i class="fas fa-award" style="font-size:18px; color:#990000"></i> Capital One Fellowship</p>
-                        <p class="member-status"><strong>Ph.D. Student</strong> (haoyanxu@usc.edu)
-                        </p>
-                        <p class="member-status">co-advised by
-                            <a href="https://mengyuan-l.github.io/index.html">Mengyuan Li</a></p>
-                    </div>
-
-
-                    <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/tiankai.webp" alt="Tiankai Yang" class="team-img">
-                        <h3><a href="https://raymondy.github.io/">Tiankai Yang</a></h3>
-                        <p>2nd year, Joined Fortis in Aug 2024</p>
-                        <p>Anomaly Detection, LLM</p>
-                        <p class="member-status"><strong>Ph.D. Student</strong> (tiankaiy@usc.edu)</p>
-                    </div>
-
-
+                    <div class="row" id="current-phd-members"></div>
                 </div>
-            </div>
+                <script>
+                    function escapeHtml(value) {
+                        return String(value)
+                            .replace(/&/g, '&amp;')
+                            .replace(/</g, '&lt;')
+                            .replace(/>/g, '&gt;')
+                            .replace(/"/g, '&quot;')
+                            .replace(/'/g, '&#39;');
+                    }
+
+                    function renderCurrentPhdMembers(members) {
+                        const container = document.getElementById('current-phd-members');
+                        if (!container) return;
+
+                        const cards = members.map(function(member) {
+                            const awards = Array.isArray(member.awards) && member.awards.length > 0
+                                ? '<p><i class="fas fa-award" style="font-size:18px; color:#990000"></i> ' + escapeHtml(member.awards.join(', ')) + '</p>'
+                                : '';
+
+                            const coAdvised = member.co_advised_by
+                                ? '<p class="member-status">co-advised by <a href="' + escapeHtml(member.co_advised_by.url) + '">' + escapeHtml(member.co_advised_by.name) + '</a></p>'
+                                : '';
+
+                            return (
+                                '<div class="col-md-4 col-sm-6 team-member">' +
+                                    '<img src="' + escapeHtml(member.image) + '" alt="' + escapeHtml(member.alt || member.name) + '" class="team-img">' +
+                                    '<h3><a href="' + escapeHtml(member.profile_url) + '">' + escapeHtml(member.name) + '</a></h3>' +
+                                    '<p>' + escapeHtml(member.year_info) + '</p>' +
+                                    '<p>' + escapeHtml(member.research) + '</p>' +
+                                    awards +
+                                    '<p class="member-status"><strong>Ph.D. Student</strong> (' + escapeHtml(member.email) + ')</p>' +
+                                    coAdvised +
+                                '</div>'
+                            );
+                        });
+
+                        container.innerHTML = cards.join('');
+                    }
+
+                    document.addEventListener('DOMContentLoaded', function() {
+                        fetch('data/lab-current-phd.json')
+                            .then(function(response) {
+                                if (!response.ok) throw new Error('Failed to load Ph.D. member data');
+                                return response.json();
+                            })
+                            .then(renderCurrentPhdMembers)
+                            .catch(function(error) {
+                                console.error(error);
+                            });
+                    });
+                </script>
                 <hr>
                 <p><strong>Connect with them</strong>: many of the Undergraduate/Master RA are looking for Ph.D./full time job for Fall 2026 -- please reach out to them (or me for an intro). </p>
                 <div class="team-section">
-                <div class="row">
-
-                <!-- Team Member -->
-                <div class="col-md-4 col-sm-6 team-member">
-                    <img src="images/others/Chenxiao.webp" alt="Chenxiao Yu" class="team-img">
-                    <h3><a href="https://aichimocha.github.io">Chenxiao Yu</a></h3>
-                    <p>Human-Centered AI / Agentic Simulation / Safety of LLMs & Agents</p>
-                    <p class="member-status">Master Student, Research Assistant (cyu96374@usc.edu)</p>
+                    <div class="row" id="current-members"></div>
                 </div>
+                <script>
+                    function memberEscapeHtml(value) {
+                        return String(value)
+                            .replace(/&/g, '&amp;')
+                            .replace(/</g, '&lt;')
+                            .replace(/>/g, '&gt;')
+                            .replace(/"/g, '&quot;')
+                            .replace(/'/g, '&#39;');
+                    }
 
-                <!-- Team Member -->
-                <div class="col-md-4 col-sm-6 team-member">
-                    <img src="images/others/peilin.webp" alt="Peilin Cai" class="team-img">
-                    <h3><a href="https://viterbi-web.usc.edu/~yzhao010/lab.html">Peilin Cai</a></h3>
-                    <p>Multimodal / Generative AI</p>
-                    <p class="member-status">Master Student (peilinca@usc.edu)</p>
-                    <div style="margin-top:10px;">
-                        <em style="color:#444;">Publications with us:</em><br>
-                        <span style="color:#555;">📄 <i>Secure On-Device Video OOD Detection Without Backpropagation</i>, ICCV 2025</span>
-                    </div>
-                </div>
-                 <!-- Team Member -->
-                 <div class="col-md-4 col-sm-6 team-member">
-                    <img src="images/others/xiaoqin_feng.webp" alt="Xiaoqin Feng" class="team-img">
-                    <h3><a href="https://xqfeng-josie.github.io/">Xiaoqin Feng</a></h3>
-                    <p>Human-Centered AI / LLM - Agentic AI</p>
-                    <p class="member-status">Master Student (xiaoqinf@usc.edu)</p>
-                </div>
+                    function renderPublications(publications) {
+                        if (!Array.isArray(publications) || publications.length === 0) return '';
+                        const lines = publications.map(function(pub) {
+                            return '<span style="color:#555;">📄 <i>' + memberEscapeHtml(pub) + '</i></span>';
+                        });
+                        return '<div style="margin-top:10px;"><em style="color:#444;">Publications with us:</em><br>' + lines.join('<br>') + '</div>';
+                    }
 
+                    function renderCurrentMembers(members) {
+                        const container = document.getElementById('current-members');
+                        if (!container) return;
 
+                        const cards = members
+                            .filter(function(member) { return member.group === 'current'; })
+                            .map(function(member) {
+                                const awards = Array.isArray(member.awards) && member.awards.length > 0
+                                    ? '<p><i class="fas fa-award" style="font-size:18px; color:#990000"></i> ' + memberEscapeHtml(member.awards.join(', ')) + '</p>'
+                                    : '';
+                                return (
+                                    '<div class="col-md-4 col-sm-6 team-member">' +
+                                        '<img src="' + memberEscapeHtml(member.image) + '" alt="' + memberEscapeHtml(member.alt || member.name) + '" class="team-img">' +
+                                        '<h3><a href="' + memberEscapeHtml(member.profile_url) + '">' + memberEscapeHtml(member.name) + '</a></h3>' +
+                                        '<p>' + memberEscapeHtml(member.research || '') + '</p>' +
+                                        '<p class="member-status">' + memberEscapeHtml(member.status_text) + ' (' + memberEscapeHtml(member.email) + ')</p>' +
+                                        awards +
+                                        renderPublications(member.publications) +
+                                    '</div>'
+                                );
+                            });
 
+                        container.innerHTML = cards.join('');
+                    }
 
-                    <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/Deyang.webp" alt="Deyang Hsu" class="team-img">
-                        <h3><a href="https://www.linkedin.com/in/deyang-hsu">Deyang Hsu</a></h3>
-                        <p>Software Engineer, ML/AI</p>
-                        <p class="member-status">Master Student (deyanghs@usc.edu)</p>
-                    </div>
+                    function renderPastMembers(members) {
+                        const container = document.getElementById('past-members');
+                        if (!container) return;
 
-                    <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/li.webp" alt="Bourne Li" class="team-img">
-                        <h3><a href="https://www.linkedin.com/in/bourne-li-a9a899231/">Bourne Li</a></h3>
-                        <p>NLP, Distributed Systems</p>
-                        <p class="member-status">Master Student (jli77629@usc.edu)</p>
-                        <div style="margin-top:10px;">
-                            <em style="color:#444;">Publications with us:</em><br>
-                            <span style="color:#555;">📄 <i>NLP-ADBench: NLP Anomaly Detection Benchmark</i>, Findings of EMNLP 2025</span><br>
-                            <span style="color:#555;">📄 <i>AD-LLM: Benchmarking Large Language Models for Anomaly Detection</i>, Findings of ACL 2025</span>
-                        </div>
-                    </div>
+                        const cards = members
+                            .filter(function(member) { return member.group === 'past'; })
+                            .map(function(member) {
+                                const publications = renderPublications(member.publications);
+                                const publicationsBlock = publications ? '<br><br>' + publications : '';
+                                return (
+                                    '<div class="col-md-6" style="margin-bottom:20px;">' +
+                                        '<div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">' +
+                                            '<strong><a href="' + memberEscapeHtml(member.profile_url) + '">' + memberEscapeHtml(member.name) + '</a></strong> (' + memberEscapeHtml(member.status_text) + ')<br>' +
+                                            '<small>📧 ' + memberEscapeHtml(member.email) + '</small>' +
+                                            publicationsBlock +
+                                        '</div>' +
+                                    '</div>'
+                                );
+                            });
 
-                     <!-- Team Member -->
-                     <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/jinbo.webp" alt="Jinbo Liu" class="team-img">
-                        <h3><a href="https://www.linkedin.com/in/jinbo-liu-4717a3302/?locale=en_US/">Jinbo Liu</a></h3>
-                        <p>Multi-Agent, Time Series</p>
-                        <p class="member-status">Master Student (jinboliu@usc.edu)</p>
-                    </div>
+                        container.innerHTML = cards.join('');
+                    }
 
-                     <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/ojas.webp" alt="Ojas Nimase" class="team-img">
-                        <h3><a href="https://ojasnimase.com/">Ojas Nimase</a></h3>
-                        <p>Mathematics, CS</p>
-                        <p class="member-status">Undergraduate RA (nimase@usc.edu)</p>
-                        <p><i class="fas fa-award" style="font-size:18px; color:#990000"></i> USC Provost Research Fellowship</p>
-                        <div style="margin-top:10px;">
-                            <em style="color:#444;">Publications with us:</em><br>
-                            <span style="color:#555;">📄 <i>Navigating Between Explainability and Extractability in Machine Learning as a Service</i>, IEEE ICDM BlueSky Track, 2025, <i class="fas fa-award" style="font-size:18px; color:#990000"></i> <span style="color:#990000">Second Prize CCC Award</span>.</span><br>
-                        </div>
-                    </div>
-
-
-                    <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/michael.jpg" alt="Michael Siu" class="team-img">
-                        <h3><a href="https://www.linkedin.com/in/michael-siu-854106271/">Michael Siu</a></h3>
-                        <p>CS, Applied Math</p>
-                        <p class="member-status">Undergraduate CURVE Fellow (siuw@usc.edu)</p>
-                        <div style="margin-top:10px;">
-                            <em style="color:#444;">Publications with us:</em><br>
-                            <span style="color:#555;">📄 <i>PyOD 2: A Python Library for Outlier Detection with LLM-powered Model Selection</i>, The Web Conference (Demo Track), 2025</span><br>
-                            <span style="color:#555;">📄 <i>AD-AGENT: A Multi-agent Framework for End-to-end Anomaly Detection</i>, Findings of IJCNLP-AACL, 2025</span>
-                        </div>
-                    </div>
-
-
-                    <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/jialetan.webp" alt="Jiale Tan" class="team-img">
-                        <h3><a href="https://www.linkedin.com/in/jiale-jacky-tan-32484a32a/">Jiale Tan</a></h3>
-                        <p>Multimodal/Generative AI</p>
-                        <p class="member-status">Master Student (jialetan@usc.edu)</p>
-                    </div>
-
-                    <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/AndrewY.webp" alt="Andrew Yu" class="team-img">
-                        <h3><a href="https://www.linkedin.com/in/andrew-yu-515170221/">Andrew Yu</a></h3>
-                        <p>Generative Engine Optimization</p>
-                        <p class="member-status">Master Student (ayyu@usc.edu)</p>
-                    </div>
-
-                        <!-- Team Member -->
-                        <div class="col-md-4 col-sm-6 team-member">
-                            <img src="images/others/Ziyiwang.webp" alt="Ziyi Wang" class="team-img">
-                            <h3><a href="https://www.linkedin.com/in/ziyi-zoe-wang-488122292/">Ziyi Wang</a></h3>
-                            <p>Generative AI, Human-centered AI</p>
-                            <p class="member-status">Master Student (zoewang@umd.edu)</p>
-                            <div style="margin-top:10px;">
-                                <em style="color:#444;">Publications with us:</em><br>
-                                <span style="color:#555;">📄 <i>Mitigating Hallucinations in Large Language Models via Causal Reasoning</i>, AAAI 2026</span><br>
-                                <span style="color:#555;">📄 <i>Few-Shot Graph Out-of-Distribution Detection with LLMs</i>, ECML PKDD 2025</span><br>
-                                <span style="color:#555;">📄 <i>JailDAM: Jailbreak Detection with Adaptive Memory for Vision-Language Model</i>, COLM 2025</span>
-                            </div>
-                        </div>
-
-
-                    <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/Zheng_Yu.webp" alt="Zheng" class="team-img">
-                        <h3><a href="https://yuzhengyyds.github.io/">Zheng Yu</a></h3>
-                        <p>Robust and Trustworthy AI, AI4Science</p>
-                        <p class="member-status">Master Student (zheng.yu.24@ucl.ac.uk)</p>
-                    </div>
-
-                      <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/Xiaolin.webp" alt="Xiaolin Zhou" class="team-img">
-                        <h3><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=_fZmUEQAAAAJ">Xiaolin Zhou</a></h3>
-                        <p>Multimodal/Generative AI/LLM</p>
-                        <p class="member-status">Master Student (xzhou733@usc.edu)</p>
-                    </div>
-
-                    <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6 team-member">
-                        <img src="images/others/ZixuanZhu.webp" alt="Zixuan Zhu" class="team-img">
-                        <h3><a href="https://www.linkedin.com/in/zixuan-zhu-a81b23345/">Zixuan Zhu</a></h3>
-                        <p>LLM/Multimodal/Generative AI</p>
-                        <p class="member-status">Master Student (zhuzixua@usc.edu)</p>
-                    </div>
-
-                    <!-- Add more team members here -->
-                </div>
-            </div>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        fetch('data/lab-members.json')
+                            .then(function(response) {
+                                if (!response.ok) throw new Error('Failed to load member data');
+                                return response.json();
+                            })
+                            .then(function(members) {
+                                renderCurrentMembers(members);
+                                renderPastMembers(members);
+                            })
+                            .catch(function(error) {
+                                console.error(error);
+                            });
+                    });
+                </script>
 
             <hr>
             <h3 class="text-center">Past Members</h3>
             <p class="text-center">We greatly appreciate the contributions of our past members (see their placement and papers with us):</p>
 
-            <div class="row" style="margin-top:20px;">
-
-
-                <!-- Past Member -->
-                <div class="col-md-6" style="margin-bottom:20px;">
-                  <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                    <strong><a href="www.linkedin.com/in/weixichen04">Jerry Chen</a></strong> (Undergraduate Student)<br>
-                    <small>📧 jchen570@usc.edu</small>
-                  </div>
-                </div>
-
-                <!-- Past Member -->
-                <div class="col-md-6" style="margin-bottom:20px;">
-                  <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                    <strong><a href="https://www.linkedin.com/in/chensihanlaura/">Sihan Chen</a></strong> (Master Student → Now Ph.D. Student at CMU)<br>
-                    <small>📧 sihanch2@andrew.cmu.edu</small><br><br>
-                    <em style="color:#444;">Publications with us:</em><br>
-                    <span style="color:#555;">📄 <i>PyOD 2: A Python Library for Outlier Detection with LLM-powered Model Selection</i>, The Web Conference (Demo Track), 2025</span>
-                  </div>
-                </div>
-
-            <!-- Past Member -->
-                <div class="col-md-6" style="margin-bottom:20px;">
-                  <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                    <strong><a href="https://yuangang-cs.vercel.app/">Yuangang Li</a></strong> (Master Student → Now Ph.D. Student at UCI)<br>
-                    <small>📧 yuangangli.cs@gmail.com</small><br><br>
-                    <em style="color:#444;">Publications with us:</em><br>
-                    <span style="color:#555;">📄 <i>Mitigating Hallucinations in Large Language Models via Causal Reasoning</i>, AAAI 2026</span><br>
-                    <span style="color:#555;">📄 <i>NLP-ADBench: NLP Anomaly Detection Benchmark</i>, Findings of EMNLP 2025</span><br>
-                    <span style="color:#555;">📄 <i>AD-LLM: Benchmarking Large Language Models for Anomaly Detection</i>, Findings of ACL 2025</span>
-                  </div>
-                </div>
-
-                <!-- Past Member -->
-                <div class="col-md-6" style="margin-bottom:20px;">
-                  <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                    <strong><a href="https://rookiye.github.io/">Yi Fan</a></strong> (Master Student)<br>
-                    <small>📧 fanyi@usc.edu</small>
-                  </div>
-                </div>
-
-            <!-- Past Member -->
-            <div class="col-md-6" style="margin-bottom:20px;">
-              <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                <strong><a href="https://www.linkedin.com/in/xing-can-hu/">Xingcan Hu</a></strong> (Undergraduate RA)<br>
-                <small>📧 xh_186@usc.edu</small><br><br>
-                <em style="color:#444;">Publications with us:</em><br>
-                <span style="color:#555;">📄 <i>PyOD 2: A Python Library for Outlier Detection with LLM-powered Model Selection</i>, The Web Conference (Demo Track), 2025</span>
-              </div>
-            </div>
-
-            <!-- Past Member -->
-            <div class="col-md-6" style="margin-bottom:20px;">
-              <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                <strong><a href="https://www.linkedin.com/in/phillip-hj-huang/">Phillip Huang</a></strong> (Master Student)<br>
-                <small>📧 huangphi@usc.edu</small>
-              </div>
-            </div>
-
-              <!-- Past Member -->
-              <div class="col-md-6" style="margin-bottom:20px;">
-                <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                  <strong><a href="https://thleo.co/">Leo Lee</a></strong> (Master Student → Software Engineer @ Nuro)<br>
-                  <small>📧 leolee.developer@gmail.com</small>
-                </div>
-              </div>
-
-                <!-- Past Member -->
-                <div class="col-md-6" style="margin-bottom:20px;">
-                  <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                    <strong><a href="https://www.linkedin.com/in/alex-qian-a0a350254/">Alex Qian</a></strong> (Undergraduate CURVE Fellow)<br>
-                    <small>📧 alexqian@usc.edu</small><br><br>
-                    <em style="color:#444;">Publications with us:</em><br>
-                    <span style="color:#555;">📄 <i>PyOD 2: A Python Library for Outlier Detection with LLM-powered Model Selection</i>, The Web Conference (Demo Track), 2025</span><br>
-                    <span style="color:#555;">📄 <i>AD-AGENT: A Multi-agent Framework for End-to-end Anomaly Detection</i>, Findings of IJCNLP-AACL, 2025</span>
-                  </div>
-                </div>
-
-
-              <!-- Past Member -->
-              <div class="col-md-6" style="margin-bottom:20px;">
-                <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                  <strong><a href="https://www.linkedin.com/in/zhuox5/">Zhuo Xiao</a></strong> (Master Student → System Software Engineer at NVIDIA)<br>
-                  <small>📧 zhuoxiao@usc.edu</small><br><br>
-                  <em style="color:#444;">Publications with us:</em><br>
-                  <span style="color:#555;">📄 <i>NLP-ADBench: NLP Anomaly Detection Benchmark</i>, Findings of EMNLP 2025</span><br>
-                  <span style="color:#555;">📄 <i>AD-LLM: Benchmarking Large Language Models for Anomaly Detection</i>, Findings of ACL 2025</span>
-                </div>
-              </div>
-
-              <!-- Past Member -->
-              <div class="col-md-6" style="margin-bottom:20px;">
-                <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                  <strong><a href="https://www.linkedin.com/in/yichi-zhang-1918881a2/">Yichi Zhang</a></strong> (Master Student)<br>
-                  <small>📧 yzhang42@usc.edu</small><br><br>
-                  <em style="color:#444;">Publications with us:</em><br>
-                  <span style="color:#555;">📄 <i>MetaOOD: Automatic Selection of OOD Detection Models</i>, ICLR 2025</span><br>
-                  <span style="color:#555;">📄 <i>PyOD 2: A Python Library for Outlier Detection with LLM-powered Model Selection</i>, The Web Conference (Demo Track), 2025</span>
-                </div>
-              </div>
-
-              <!-- Past Member -->
-              <div class="col-md-6" style="margin-bottom:20px;">
-                <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                  <strong><a href="https://jasonsdc.github.io/">Dacheng Shen</a></strong> (Master Student → Now Ph.D. Student at WSU)<br>
-                  <small>📧 jasonshendc@gmail.com</small>
-                </div>
-              </div>
-
-
-            <!-- Past Member -->
-            <div class="col-md-6" style="margin-bottom:20px;">
-              <div style="border:1px solid #ddd; border-radius:10px; padding:15px; height:100%;">
-                <strong>
-                  <a href="https://www.linkedin.com/in/huixian-gong-072900235/">Huixian Gong</a>
-                </strong> (Master Student → Software Developer Engineer at Amazon)<br>
-                <small>📧 huixian@usc.edu</small><br><br>
-                <em style="color:#444;">Publications with us:</em><br>
-                <span style="color:#555;">
-                  📄 <i>DPU: Dynamic Prototype Updating for Multimodal Out-of-Distribution Detection</i>, CVPR 2025
-                </span>
-              </div>
-            </div>
-
-
+            <div class="row" style="margin-top:20px;" id="past-members"></div>
 
         <hr>
         <h3 class="text-center">Lab Activities</h3>

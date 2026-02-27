@@ -1,0 +1,274 @@
+[
+  {
+    "group": "current",
+    "name": "Chenxiao Yu",
+    "profile_url": "https://aichimocha.github.io",
+    "image": "images/others/Chenxiao.webp",
+    "alt": "Chenxiao Yu",
+    "research": "Human-Centered AI / Agentic Simulation / Safety of LLMs & Agents",
+    "status_text": "Master Student, Research Assistant",
+    "email": "cyu96374@usc.edu"
+  },
+  {
+    "group": "current",
+    "name": "Peilin Cai",
+    "profile_url": "https://viterbi-web.usc.edu/~yzhao010/lab.html",
+    "image": "images/others/peilin.webp",
+    "alt": "Peilin Cai",
+    "research": "Multimodal / Generative AI",
+    "status_text": "Master Student",
+    "email": "peilinca@usc.edu",
+    "publications": [
+      "Secure On-Device Video OOD Detection Without Backpropagation, ICCV 2025"
+    ]
+  },
+  {
+    "group": "current",
+    "name": "Xiaoqin Feng",
+    "profile_url": "https://xqfeng-josie.github.io/",
+    "image": "images/others/xiaoqin_feng.webp",
+    "alt": "Xiaoqin Feng",
+    "research": "Human-Centered AI / LLM - Agentic AI",
+    "status_text": "Master Student",
+    "email": "xiaoqinf@usc.edu"
+  },
+  {
+    "group": "current",
+    "name": "Deyang Hsu",
+    "profile_url": "https://www.linkedin.com/in/deyang-hsu",
+    "image": "images/others/Deyang.webp",
+    "alt": "Deyang Hsu",
+    "research": "Software Engineer, ML/AI",
+    "status_text": "Master Student",
+    "email": "deyanghs@usc.edu"
+  },
+  {
+    "group": "current",
+    "name": "Bourne Li",
+    "profile_url": "https://www.linkedin.com/in/bourne-li-a9a899231/",
+    "image": "images/others/li.webp",
+    "alt": "Bourne Li",
+    "research": "NLP, Distributed Systems",
+    "status_text": "Master Student",
+    "email": "jli77629@usc.edu",
+    "publications": [
+      "NLP-ADBench: NLP Anomaly Detection Benchmark, Findings of EMNLP 2025",
+      "AD-LLM: Benchmarking Large Language Models for Anomaly Detection, Findings of ACL 2025"
+    ]
+  },
+  {
+    "group": "current",
+    "name": "Jinbo Liu",
+    "profile_url": "https://www.linkedin.com/in/jinbo-liu-4717a3302/?locale=en_US/",
+    "image": "images/others/jinbo.webp",
+    "alt": "Jinbo Liu",
+    "research": "Multi-Agent, Time Series",
+    "status_text": "Master Student",
+    "email": "jinboliu@usc.edu"
+  },
+  {
+    "group": "current",
+    "name": "Ojas Nimase",
+    "profile_url": "https://ojasnimase.com/",
+    "image": "images/others/ojas.webp",
+    "alt": "Ojas Nimase",
+    "research": "Mathematics, CS",
+    "status_text": "Undergraduate RA",
+    "email": "nimase@usc.edu",
+    "awards": [
+      "USC Provost Research Fellowship"
+    ],
+    "publications": [
+      "Navigating Between Explainability and Extractability in Machine Learning as a Service, IEEE ICDM BlueSky Track, 2025, Second Prize CCC Award."
+    ]
+  },
+  {
+    "group": "current",
+    "name": "Michael Siu",
+    "profile_url": "https://www.linkedin.com/in/michael-siu-854106271/",
+    "image": "images/others/michael.jpg",
+    "alt": "Michael Siu",
+    "research": "CS, Applied Math",
+    "status_text": "Undergraduate CURVE Fellow",
+    "email": "siuw@usc.edu",
+    "publications": [
+      "PyOD 2: A Python Library for Outlier Detection with LLM-powered Model Selection, The Web Conference (Demo Track), 2025",
+      "AD-AGENT: A Multi-agent Framework for End-to-end Anomaly Detection, Findings of IJCNLP-AACL, 2025"
+    ]
+  },
+  {
+    "group": "current",
+    "name": "Jiale Tan",
+    "profile_url": "https://www.linkedin.com/in/jiale-jacky-tan-32484a32a/",
+    "image": "images/others/jialetan.webp",
+    "alt": "Jiale Tan",
+    "research": "Multimodal/Generative AI",
+    "status_text": "Master Student",
+    "email": "jialetan@usc.edu"
+  },
+  {
+    "group": "current",
+    "name": "Andrew Yu",
+    "profile_url": "https://www.linkedin.com/in/andrew-yu-515170221/",
+    "image": "images/others/AndrewY.webp",
+    "alt": "Andrew Yu",
+    "research": "Generative Engine Optimization",
+    "status_text": "Master Student",
+    "email": "ayyu@usc.edu"
+  },
+  {
+    "group": "current",
+    "name": "Ziyi Wang",
+    "profile_url": "https://www.linkedin.com/in/ziyi-zoe-wang-488122292/",
+    "image": "images/others/Ziyiwang.webp",
+    "alt": "Ziyi Wang",
+    "research": "Generative AI, Human-centered AI",
+    "status_text": "Master Student",
+    "email": "zoewang@umd.edu",
+    "publications": [
+      "Mitigating Hallucinations in Large Language Models via Causal Reasoning, AAAI 2026",
+      "Few-Shot Graph Out-of-Distribution Detection with LLMs, ECML PKDD 2025",
+      "JailDAM: Jailbreak Detection with Adaptive Memory for Vision-Language Model, COLM 2025"
+    ]
+  },
+  {
+    "group": "current",
+    "name": "Zheng Yu",
+    "profile_url": "https://yuzhengyyds.github.io/",
+    "image": "images/others/Zheng_Yu.webp",
+    "alt": "Zheng Yu",
+    "research": "Robust and Trustworthy AI, AI4Science",
+    "status_text": "Master Student",
+    "email": "zheng.yu.24@ucl.ac.uk"
+  },
+  {
+    "group": "current",
+    "name": "Xiaolin Zhou",
+    "profile_url": "https://scholar.google.com/citations?view_op=list_works&hl=en&user=_fZmUEQAAAAJ",
+    "image": "images/others/Xiaolin.webp",
+    "alt": "Xiaolin Zhou",
+    "research": "Multimodal/Generative AI/LLM",
+    "status_text": "Master Student",
+    "email": "xzhou733@usc.edu"
+  },
+  {
+    "group": "current",
+    "name": "Zixuan Zhu",
+    "profile_url": "https://www.linkedin.com/in/zixuan-zhu-a81b23345/",
+    "image": "images/others/ZixuanZhu.webp",
+    "alt": "Zixuan Zhu",
+    "research": "LLM/Multimodal/Generative AI",
+    "status_text": "Master Student",
+    "email": "zhuzixua@usc.edu"
+  },
+  {
+    "group": "past",
+    "name": "Jerry Chen",
+    "profile_url": "https://www.linkedin.com/in/weixichen04",
+    "status_text": "Undergraduate Student",
+    "email": "jchen570@usc.edu"
+  },
+  {
+    "group": "past",
+    "name": "Sihan Chen",
+    "profile_url": "https://www.linkedin.com/in/chensihanlaura/",
+    "status_text": "Master Student → Now Ph.D. Student at CMU",
+    "email": "sihanch2@andrew.cmu.edu",
+    "publications": [
+      "PyOD 2: A Python Library for Outlier Detection with LLM-powered Model Selection, The Web Conference (Demo Track), 2025"
+    ]
+  },
+  {
+    "group": "past",
+    "name": "Yuangang Li",
+    "profile_url": "https://yuangang-cs.vercel.app/",
+    "status_text": "Master Student → Now Ph.D. Student at UCI",
+    "email": "yuangangli.cs@gmail.com",
+    "publications": [
+      "Mitigating Hallucinations in Large Language Models via Causal Reasoning, AAAI 2026",
+      "NLP-ADBench: NLP Anomaly Detection Benchmark, Findings of EMNLP 2025",
+      "AD-LLM: Benchmarking Large Language Models for Anomaly Detection, Findings of ACL 2025"
+    ]
+  },
+  {
+    "group": "past",
+    "name": "Yi Fan",
+    "profile_url": "https://rookiye.github.io/",
+    "status_text": "Master Student",
+    "email": "fanyi@usc.edu"
+  },
+  {
+    "group": "past",
+    "name": "Xingcan Hu",
+    "profile_url": "https://www.linkedin.com/in/xing-can-hu/",
+    "status_text": "Undergraduate RA",
+    "email": "xh_186@usc.edu",
+    "publications": [
+      "PyOD 2: A Python Library for Outlier Detection with LLM-powered Model Selection, The Web Conference (Demo Track), 2025"
+    ]
+  },
+  {
+    "group": "past",
+    "name": "Phillip Huang",
+    "profile_url": "https://www.linkedin.com/in/phillip-hj-huang/",
+    "status_text": "Master Student",
+    "email": "huangphi@usc.edu"
+  },
+  {
+    "group": "past",
+    "name": "Leo Lee",
+    "profile_url": "https://thleo.co/",
+    "status_text": "Master Student → Software Developer Engineer at Nuro",
+    "email": "leolee.developer@gmail.com"
+  },
+  {
+    "group": "past",
+    "name": "Alex Qian",
+    "profile_url": "https://www.linkedin.com/in/alex-qian-a0a350254/",
+    "status_text": "Undergraduate CURVE Fellow",
+    "email": "alexqian@usc.edu",
+    "publications": [
+      "PyOD 2: A Python Library for Outlier Detection with LLM-powered Model Selection, The Web Conference (Demo Track), 2025",
+      "AD-AGENT: A Multi-agent Framework for End-to-end Anomaly Detection, Findings of IJCNLP-AACL, 2025"
+    ]
+  },
+  {
+    "group": "past",
+    "name": "Zhuo Xiao",
+    "profile_url": "https://www.linkedin.com/in/zhuox5/",
+    "status_text": "Master Student → System Software Engineer at NVIDIA",
+    "email": "zhuoxiao@usc.edu",
+    "publications": [
+      "NLP-ADBench: NLP Anomaly Detection Benchmark, Findings of EMNLP 2025",
+      "AD-LLM: Benchmarking Large Language Models for Anomaly Detection, Findings of ACL 2025"
+    ]
+  },
+  {
+    "group": "past",
+    "name": "Yichi Zhang",
+    "profile_url": "https://www.linkedin.com/in/yichi-zhang-1918881a2/",
+    "status_text": "Master Student",
+    "email": "yzhang42@usc.edu",
+    "publications": [
+      "MetaOOD: Automatic Selection of OOD Detection Models, ICLR 2025",
+      "PyOD 2: A Python Library for Outlier Detection with LLM-powered Model Selection, The Web Conference (Demo Track), 2025"
+    ]
+  },
+  {
+    "group": "past",
+    "name": "Dacheng Shen",
+    "profile_url": "https://jasonsdc.github.io/",
+    "status_text": "Master Student → Now Ph.D. Student at WSU",
+    "email": "jasonshendc@gmail.com"
+  },
+  {
+    "group": "past",
+    "name": "Huixian Gong",
+    "profile_url": "https://www.linkedin.com/in/huixian-gong-072900235/",
+    "status_text": "Master Student → Software Developer Engineer at Amazon",
+    "email": "huixian@usc.edu",
+    "publications": [
+      "DPU: Dynamic Prototype Updating for Multimodal Out-of-Distribution Detection, CVPR 2025"
+    ]
+  }
+]
