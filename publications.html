@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -39,7 +39,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('navbar.html')
+            fetch('includes/navbar.html')
             .then(response => response.text())
             .then(content => {
                 document.getElementById('navbar').innerHTML = content;
@@ -63,45 +63,24 @@
     <div class="container">
         <!-- Contact Info on the Sidebar -->
         <div class="row">
-            <div class="col-md-3 col-12 content-spacing">
-                <div class="heading">Yue Zhao</div>
-                <div class="row">
-                    <div class="col-md-10 col-6">
-                        <img class="img-fluid headshot" src="images/rsz_250.jpg" alt="Avatar of Yue Zhao">
-                    </div>
-                </div>
-                <div class="info-text">
-                    <i>Assistant Professor</i><br>
-                    <a href="https://www.cs.usc.edu/"> Department of Computer Science</a><br>
-                    <a href="https://sac.usc.edu/" style="color:#767676;"> School of Advanced Computing</a><br>
-                    <p class="university-color">University of Southern California</p>
-                    Los Angeles, CA, USA<br>
-                    <b>Email</b>: <span id="email-placeholder"></span>
-                    <script>
-                    document.addEventListener('DOMContentLoaded', function() {
+            <div id="sidebar" class="col-md-3 col-12 content-spacing"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    fetch('includes/sidebar.html')
+                    .then(response => response.text())
+                    .then(content => {
+                        const sidebar = document.getElementById('sidebar');
+                        sidebar.innerHTML = content;
+
                         var emailUser = 'yue.z';
                         var emailHost = 'usc.edu';
-                        var emailElement = document.getElementById('email-placeholder');
-                        emailElement.innerHTML = '<a href="mailto:' + emailUser + '@' + emailHost + '">' + emailUser + '@' + emailHost + '</a>';
+                        var emailElement = sidebar.querySelector('#email-placeholder');
+                        if (emailElement) {
+                            emailElement.innerHTML = '<a href="mailto:' + emailUser + '@' + emailHost + '">' + emailUser + '@' + emailHost + '</a>';
+                        }
                     });
-                    </script>
-                </div>
-                <div class="link-list">
-                    <a href="https://scholar.google.com/citations?user=zoGDYsoAAAAJ&hl=en">Google Scholar</a> |
-                    <a href="files/bio.txt">Short Bio</a> |
-                    <a href="https://github.com/yzhao062">GitHub</a> |
-                    <a href="https://www.linkedin.com/in/yzhao062/"> LinkedIn</a> |
-                    <a href="https://www.zhihu.com/people/breaknever/">知乎 (微调)</a> |
-                    <a href="https://www.xiaohongshu.com/user/profile/61716aad000000000201caae?xhsshare=CopyLink&appuid=61716aad000000000201caae&apptime=1693197943">小红书</a> |
-                    <a href="images/ID_yzhao062.jpg">微信</a> |
-                    <span title="Combined followers across all platforms" style="color:#990000;">
-                        <i class="fas fa-users"></i> 300k+ followers in total
-                    </span><br>
-                    <span title="GitHub Stars (Global Rank)" style="color:#990000;">
-                        22k+ GitHub ⭐ <a href="https://gitstar-ranking.com/yzhao062" target="_blank" style="color:#990000; text-decoration: underline;">Top 700 Worldwide</a>
-                    </span>
-                </div>
-            </div>
+                });
+            </script>
 
             <!-- Entries Column -->
             <div class="col-md-9 col-xs-12 content-spacing">
@@ -138,7 +117,7 @@
                     <p><strong>[w25e]</strong> A Survey of Model Extraction Attacks and Defenses in Distributed Computing Environments, with Kaixiang Zhao, Lincan Li, Kaize Ding, Neil Zhenqiang Gong, Yue Zhao, Yushun Dong. <a href="https://arxiv.org/abs/2502.16065">Preprint</a>.</p>
                     <p><strong>[w25c]</strong> ClimateLLM: Efficient Weather Forecasting via Frequency-Aware Large Language Models, with Shixuan Li, Wei Yang, Peiyu Zhang, Xiongye Xiao, Defu Cao, Yuehan Qin, Xiaole Zhang, Yue Zhao, Paul Bogdan. <a href="https://arxiv.org/abs/2502.11059">Preprint</a>.</p>
                     <p><strong>[w24p]</strong> A Large-Scale Simulation on Large Language Models for Decision-Making in Political Science, with Chenxiao Yu, Jinyi Ye, Yuangang Li, Zheng Li, Emilio Ferrara, Xiyang Hu. <i class="fas fa-award" style="font-size:18px;"></i> <b>SSRN Top Download Papers for Decision Science</b>. <a href="https://arxiv.org/abs/2412.15291">Preprint</a>. </p>
-                    <p><strong>[w24o]</strong> Political-LLM: Large Language Models in Political Science, with Lincan Li, Jiaqi Li, Catherine Chen, Fred Gui, Yushun Dong. <a href="https://arxiv.org/abs/2412.06864">Preprint</a>.</p
+                    <p><strong>[w24o]</strong> Political-LLM: Large Language Models in Political Science, with Lincan Li, Jiaqi Li, Catherine Chen, Fred Gui, Yushun Dong. <a href="https://arxiv.org/abs/2412.06864">Preprint</a>.</p>
                     <p><strong>[w24n]</strong> Personalized Multimodal Large Language Models: A Survey, with Junda Wu, Hanjia Lyu, Yu Xia, Zhehao Zhang, Joe Barrow, Ishita Kumar, Mehnoosh Mirtahebi, and others. <a href="https://arxiv.org/abs/2412.02142">Preprint</a>.</p>
                     <hr>
                     <h4 id="conference-papers">Conference Papers</h4>
@@ -631,7 +610,7 @@
     <div id="myFooter"></div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('footer.html')
+            fetch('includes/footer.html')
             .then(response => response.text())
             .then(content => {
                 document.getElementById('myFooter').innerHTML = content;
@@ -640,3 +619,5 @@
     </script>
 </body>
 </html>
+
+
